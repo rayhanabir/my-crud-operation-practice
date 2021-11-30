@@ -37,7 +37,7 @@ async function run() {
             const id = req.params.id;
             const query = {_id:ObjectId(id)}
             const result = await productsCollection.findOne(query)
-            console.log('got id card', id)
+            // console.log('got id card', id)
             res.json(result)
         })
 
@@ -56,8 +56,8 @@ async function run() {
           },
         };
         const result = await productsCollection.updateOne(filter, updateDoc, options)
-        console.log(result);
-        console.log("getting putting id", id)
+        // console.log(result);
+        // console.log("getting putting id", id)
         res.json(result)
     })
 
@@ -67,8 +67,8 @@ async function run() {
       app.post('/products', async(req, res)=>{
           const newProduct = req.body;
           const result = await productsCollection.insertOne(newProduct);
-          console.log('hitting the post', req.body);
-          console.log('added products', result);
+        //   console.log('hitting the post', req.body);
+        //   console.log('added products', result);
           res.json(result);
       })
 
